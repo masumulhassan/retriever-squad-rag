@@ -1,0 +1,15 @@
+haystack-ai
+ollama-haystack
+milvus-haystack
+streamlit~=1.40.0
+markdown~=3.7
+st-annotated-text
+datasets~=3.1.0
+openinference-instrumentation-haystack
+arize-phoenix-otel
+phoenix~=0.9.1
+opentelemetry-sdk
+opentelemetry-exporter-otlp-proto-http
+python-dotenv~=1.0.1
+pypdf
+pdfminer.six
