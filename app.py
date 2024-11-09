@@ -17,10 +17,10 @@ try:
     set_initial_state()
 
     # RAG title
-    st.write('# RAG For WellDev')
+    st.write('# The Retriever Squad RAG')
 
     # Search bar
-    question = st.text_input("", value=st.session_state.question, max_chars=1000, on_change=reset_results)
+    question = st.text_input("Question", value=st.session_state.question, max_chars=1000, on_change=reset_results)
 
     run_pressed = st.button("Run")
 

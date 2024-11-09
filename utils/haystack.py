@@ -33,7 +33,10 @@ def start_haystack_rag_data_embedding(_document_store: MilvusDocumentStore):
     document_joiner = DocumentJoiner()
     document_cleaner = DocumentCleaner()
     document_splitter = DocumentSplitter(split_by="sentence", split_length=5)
-    document_embedder = OllamaDocumentEmbedder()
+    document_embedder = OllamaDocumentEmbedder(
+        model=model_configs['EMBEDDING_MODEL'],
+        url=model_configs['LLM_URI']
+    )
     document_writer = DocumentWriter(_document_store)
 
     preprocessing_pipeline = Pipeline()
@@ -64,11 +67,15 @@ def start_haystack_rag(_document_store: MilvusDocumentStore):
         top_k=5
     )
 
-    prompt_builder = PromptBuilder(template=test_prompt)
+    prompt_builder = PromptBuilder(template=prompt_template)
 
     generator = OllamaGenerator(
         model=model_configs['GENERATIVE_MODEL'],
         url=model_configs['LLM_URI'],
+        generation_kwargs={
+            "num_predict": -1,
+            "temperature": 0.6,
+        }
     )
 
     basic_rag_pipeline = Pipeline()

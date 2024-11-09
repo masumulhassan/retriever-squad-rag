@@ -6,7 +6,7 @@ load_dotenv()
 model_configs = {
     'LLM_URI': os.getenv("LLM_URI", "http://localhost:11434"),
     'EMBEDDING_MODEL': os.getenv("EMBEDDING_MODEL", "nomic-embed-text"),
-    'GENERATIVE_MODEL': os.getenv("GENERATIVE_MODEL", "llama3.2:1b"),
+    'GENERATIVE_MODEL': os.getenv("GENERATIVE_MODEL", "llama3.1"),
 }
 
 document_store_configs = {
