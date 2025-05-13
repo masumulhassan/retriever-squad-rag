@@ -1,6 +1,4 @@
----
-title: The Retriever Squad RAG
----
+# The Retriever Squad RAG
 
 ## Installation 
 1. Install requirements: `pip install -r requirements.txt`
